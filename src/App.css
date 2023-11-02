@@ -1,42 +1,118 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 100vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes appear {
+  0% {
+    transform: translateX(-100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(0);
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+.header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 28px;
+
+  .logo-container{
+    display: flex;
+
+    img{
+      width: 100px;
+      height: 100px;
+    }
   }
+
+  .logo-label{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+
+    .logo-text-bold{
+      font-weight: 800;
+      font-size: 34px;
+    }
+    .logo-text-regular{
+      font-weight: 400;
+      font-size: 18px;
+    }
+  }
+  
+  .menu-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  a{
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover{
+      color: #7223cf;
+      transition: 500ms;
+      opacity: 0.7;
+    }
+  }
+
+  button{
+    border-radius: 24px;
+    border: none;
+    background-color: transparent;
+    font-weight: 500;
+    font-size: 16px;
+    overflow: hidden;
+
+    div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      height: 100%;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 24px;
+      border: none;
+    }
+
+    .btn-face-white{
+      color: rgb(51, 51, 51);
+      background-color: white;
+    }
+
+    .btn-face-color{
+      color: white;
+      background-color: #7223cf;
+      display: none;
+      /* animation: appear 600ms linear 200ms forwards; */
+      
+    }
+
+    &:hover{
+      .btn-face-white{
+        display: none;
+      }
+      .btn-face-color{
+        display: flex;
+        animation: appear 600ms linear 200ms forwards;
+      }
+    }
+
+  }
+
 }
 
-.card {
-  padding: 2em;
-}
 
-.read-the-docs {
-  color: #888;
-}
