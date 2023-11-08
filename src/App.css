@@ -5,14 +5,19 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #1a0924;
 }
 
 @keyframes appear {
   0% {
     transform: translateX(-100%);
+    background: white;
+    color: rgb(51, 51, 51);
   }
   100% {
     transform: translateX(0);
+    background: linear-gradient(45deg,#7223cf, #da2eb8);
+    color: white;
   }
 }
 
@@ -74,6 +79,7 @@
     font-weight: 500;
     font-size: 16px;
     overflow: hidden;
+    position: relative;
 
     div{
       display: flex;
@@ -90,29 +96,70 @@
 
     .btn-face-white{
       color: rgb(51, 51, 51);
-      background-color: white;
+      background: white;
+      z-index: 998;
     }
 
     .btn-face-color{
-      color: white;
-      background-color: #7223cf;
       display: none;
-      /* animation: appear 600ms linear 200ms forwards; */
-      
+      z-index: 999;
+      position: absolute;
+      top: 0;
     }
 
     &:hover{
-      .btn-face-white{
-        display: none;
-      }
+    
       .btn-face-color{
+        animation: appear 400ms linear 100ms forwards;
         display: flex;
-        animation: appear 600ms linear 200ms forwards;
+        
       }
     }
 
   }
-
 }
 
+.content-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-grow: 1;
 
+  h1 {
+    font-size: 60px;
+  }
+
+  .bubble{
+    background-color: hsla(0, 0%, 100%, 0.1);
+    padding: 14px;
+    border-radius: 100%;
+    position: absolute;
+    
+    &.money {
+      right: -80px;
+      bottom: 30%;
+      font-size: 32px;
+      transform: rotate(-20deg);
+    }
+
+    &.repair {
+      top: 25%;
+      right: 64px;
+      font-size: 50px;
+    }
+
+    &.car {
+      top: 15%;
+      left: 80px;
+      font-size: 64px;
+    }
+
+    &.mechanic{
+      bottom: 20%;
+      left: 30px;
+      font-size: 50px;
+    }
+
+  }
+}

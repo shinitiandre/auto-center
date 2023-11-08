@@ -33,6 +33,21 @@ function App() {
         </button>
         
       </header>
+      <div className="content-container">
+        <h1>High-quality mechanics at fair prices.</h1>
+        <div className="bubble car">
+          🚗
+        </div>
+        <div className="bubble repair">
+          🛠️
+        </div>
+        <div className="bubble mechanic">
+          🧑🏼‍🔧
+        </div>
+        <div className="bubble money">
+          💵
+        </div>
+      </div>
     </>
   )
 }
